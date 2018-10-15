@@ -6,7 +6,7 @@ class Book extends Component {
 			<li>
 				<div className="book">
 					<div className="book-top">
-						<div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${this.props.url})` }}></div>
+						<div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${this.props.book.imageLinks.smallThumbnail})` }}></div>
 						<div className="book-shelf-changer">
 							<select>
 	              <option value="move" disabled>Move to...</option>
@@ -17,8 +17,8 @@ class Book extends Component {
 							</select>
 						</div>
 					</div>
-					<div className="book-title">{this.props.name}</div>
-					<div className="book-authors">{this.props.authors}</div>
+					<div className="book-title">{this.props.book.name}</div>
+					<div className="book-authors">{this.props.book.authors}</div>
 				</div>
 			</li>
 		)
