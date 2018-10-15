@@ -23,11 +23,16 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        {console.log(this.state.books)}
-        {this.state.books.map(book => (
-            <Book key={book.title} name={book.title} authors={book.authors} url={book.imageLinks.thumbnail}/>
-          ))}
+      <div className="list-books">
+        <div className="list-books-title">
+          <h1>MyReads</h1>
+        </div>
+        <div className="app">
+          {console.log(this.state.books)}
+          {this.state.books.map(book => (
+              <Book key={book.title} name={book.title} authors={book.authors} url={book.imageLinks.thumbnail}/>
+            ))}
+        </div>
       </div>
     )
   }
