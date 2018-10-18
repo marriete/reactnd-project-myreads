@@ -11,12 +11,13 @@ class BookShelf extends Component {
 		return (
 			<div>
 				<div className="bookshelf">
-					<h2 className="bookshelf-title">Currently Reading</h2>
+					<h2 className="bookshelf-title">{this.props.shelf.title}</h2>
 					<div className="bookshelf-books">
 						<ol className="books-grid">
-							{this.props.books.map(book => (
+							{this.props.books.filter((book) => (
+								book.shelf === this.props.shelf.type)).map((book) =>
 								<Book book={book} books={this.props.books} key={book.id} />
-							))}
+							)}
 						</ol>
 					</div>
 				</div>
