@@ -21,6 +21,13 @@ class BooksApp extends React.Component {
     })
   }
 
+  changeShelf = (book, newShelf) => {
+    book.shelf = newShelf
+    this.setState((prevState) => ({
+      books: prevState.books.filter((b) => (b.id !== book.id)).concat(book)
+    }))
+  }
+
   render() {
     return (
       <div className="list-books">
@@ -28,7 +35,8 @@ class BooksApp extends React.Component {
           <h1>MyReads</h1>
         </div>
         <div className="app">
-          <BookList books={this.state.books}/>
+          {console.log(this.state.books)}
+          <BookList books={this.state.books} changeShelf={this.changeShelf} />
         </div>
       </div>
     )
