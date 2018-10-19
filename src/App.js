@@ -2,6 +2,7 @@ import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import BookList from './BookList.js'
+import AddBook from './AddBook.js'
 
 class BooksApp extends React.Component {
   state = {
@@ -30,14 +31,20 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
-        </div>
-        <div className="app">
-          {console.log(this.state.books)}
-          <BookList books={this.state.books} changeShelf={this.changeShelf} />
-        </div>
+      <div>
+        {this.state.showSearchPage === false && (
+          <div className="list-books">
+            <div className="list-books-title">
+              <h1>MyReads</h1>
+            </div>
+            <div className="app">
+              <BookList books={this.state.books} changeShelf={this.changeShelf} />
+            </div>
+          </div>
+        )}
+        {this.state.showSearchPage === true && (
+          <AddBook />
+        )}
       </div>
     )
   }
