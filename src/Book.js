@@ -5,7 +5,7 @@ import NotFound from './imgs/NotFound.png'
 class Book extends Component {
 	render() {
 				let thumbnail = NotFound
-		if (typeof(this.props.book.imageLinks) != "undefined")
+		if (typeof(this.props.book.imageLinks) !== "undefined")
 			thumbnail = `${this.props.book.imageLinks.smallThumbnail}`
 
 		return (

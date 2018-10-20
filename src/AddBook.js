@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import escapeRegExp from 'escape-string-regexp'
-import sortBy from 'sort-by'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book.js'
 
@@ -35,7 +33,6 @@ class AddBook extends Component {
         <div className="search-books-results">
         	{this.state.searchedBooks.length > 0 && (
           <ol className="books-grid">
-						{console.log(this.state.searchedBooks)}
 						{this.state.searchedBooks.map((book) => (
 							<Book book={book} books={this.props.books} changeShelf={this.props.changeShelf} key={book.id} />
 						))}
