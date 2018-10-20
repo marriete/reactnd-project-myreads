@@ -37,7 +37,7 @@ class AddBook extends Component {
           <ol className="books-grid">
 						{console.log(this.state.searchedBooks)}
 						{this.state.searchedBooks.map((book) => (
-							<Book book={book} />
+							<Book book={book} books={this.props.books} key={book.id} />
 						))}
           </ol>
         	)}
